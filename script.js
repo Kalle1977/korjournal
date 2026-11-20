@@ -8,7 +8,7 @@ try {
   if (!Array.isArray(trips)) trips = [];
 } catch (error) {
   trips = [];
-}'
+}
 
 const $ = id => document.getElementById(id);
 
