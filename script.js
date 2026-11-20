@@ -709,7 +709,8 @@ console.log("Körjournalen är igång.");
 
     <label>Bilens registreringsnummer</label>
     <input id="kjReg" placeholder="ABC123">
-
+    <label>Förare</label>
+    <input id="kjDriver" placeholder="Förarens namn">
     <button type="button" id="kjSaveCompany">
       Spara företagsuppgifter
     </button>
@@ -751,11 +752,12 @@ console.log("Körjournalen är igång.");
   // Företagsuppgifter
   $("kjCompany").value = company.name || "";
   $("kjReg").value = company.reg || "";
-
+$("kjDriver").value = company.driver || "";
   $("kjSaveCompany").addEventListener("click", function() {
     company = {
       name: $("kjCompany").value.trim(),
-      reg: $("kjReg").value.trim()
+     reg: $("kjReg").value.trim(),
+     driver: $("kjDriver").value.trim()
     };
 
     localStorage.setItem(
