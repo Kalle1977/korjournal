@@ -967,6 +967,7 @@ $("kjYearPDF").addEventListener("click", function() {
        Företag: ${escapeHTML(JSON.parse(localStorage.getItem("minKorjournal_company_v1") || "{}").name || "Ej angivet")}<br>
        Förare: ${escapeHTML(JSON.parse(localStorage.getItem("minKorjournal_company_v1") || "{}").driver || "Ej angivet")}<br>
        Registreringsnummer: ${escapeHTML(JSON.parse(localStorage.getItem("minKorjournal_company_v1") || "{}").reg || "Ej angivet")}<br>
+       Utskriftsdatum: ${new Date().toLocaleDateString("sv-SE")}<br>
       </p>
 
       <h3>Årssammanställning</h3>
