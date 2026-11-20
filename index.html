@@ -1,0 +1,69 @@
+
+<div class="app">
+  <header>
+    <h1>🚗 Min Körjournal</h1>
+    <p>Din digitala körjournal</p>
+  </header>
+
+  <section class="panel">
+    <h2>Registrera resa</h2>
+      <form id="tripForm" onsubmit="return false;">
+      <input type="hidden" id="editId">
+
+      <label>Datum</label>
+      <input type="date" id="date" required>
+
+      <label>Från</label>
+      <input type="text" id="from" required>
+      <button type="button" id="gpsStart" class="secondary">Hämta GPS vid start</button>
+
+      <label>Till</label>
+      <input type="text" id="to" required>
+      <button type="button" id="gpsEnd" class="secondary">Hämta GPS vid slut</button>
+
+      <label>Syfte</label>
+      <input type="text" id="purpose">
+
+      <div class="two">
+        <div>
+          <label>Km start</label>
+          <input type="number" id="kmStart" min="0" step="0.1" required>
+        </div>
+        <div>
+          <label>Km slut</label>
+          <input type="number" id="kmEnd" min="0" step="0.1" required>
+        </div>
+      </div>
+
+      <label>Tjänst / Privat</label>
+      <select id="type">
+        <option value="Tjänst">Tjänst</option>
+        <option value="Privat">Privat</option>
+      </select>
+
+      <button type="submit" id="saveBtn">Spara resa</button>
+      <button type="button" id="cancelBtn" class="secondary" hidden>Avbryt</button>
+    </form>
+  </section>
+
+  <section class="panel">
+    <h2>Resestatistik</h2>
+    <div class="odometer">
+      <span>Bilens senaste mätarställning</span>
+      <strong id="currentOdometer">0 km</strong>
+    </div>
+    <div class="stats">
+      <div><strong id="totalTrips">0</strong><span>Resor</span></div>
+      <div><strong id="totalKm">0</strong><span>Körda km</span></div>
+      <div><strong id="serviceKm">0</strong><span>Tjänstekm</span></div>
+    </div>
+    <button type="button" id="exportBtn">Exportera till Excel</button>
+  </section>
+
+  <section class="panel">
+    <h2>Registrerade resor</h2>
+    <div id="tripList"></div>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
