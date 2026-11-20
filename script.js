@@ -309,6 +309,15 @@ try {
 } catch (error) {
   savedCompany = {};
 }
+let savedCompany = {};
+
+try {
+  savedCompany = JSON.parse(
+    localStorage.getItem("minKorjournal_company_v1") || "{}"
+  );
+} catch (error) {
+  savedCompany = {};
+}
 
 const rows = sortedTrips().map(t => ({
   "Företag": savedCompany.name || "",
@@ -322,7 +331,9 @@ const rows = sortedTrips().map(t => ({
   "Mätarställning slut": t.kmEnd,
   "Körda km": t.km,
   "Typ av resa": t.type
-}));  const worksheet = XLSX.utils.json_to_sheet(rows);
+}));
+  
+  const worksheet = XLSX.utils.json_to_sheet(rows);
   const workbook = XLSX.utils.book_new();
 
   XLSX.utils.book_append_sheet(
