@@ -965,6 +965,7 @@ $("kjYearPDF").addEventListener("click", function() {
 
       <p>
         Företag: ${escapeHTML(company.name || "Ej angivet")}<br>
+        Förare: ${escapeHTML(company.driver || "Ej angivet")}<br>
         Registreringsnummer: ${escapeHTML(company.reg || "Ej angivet")}<br>
         Utskriftsdatum: ${new Date().toLocaleDateString("sv-SE")}
       </p>
