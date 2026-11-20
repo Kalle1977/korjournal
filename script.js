@@ -301,6 +301,8 @@ $("exportBtn").addEventListener("click", function() {
   }
 
   const rows = sortedTrips().map(t => ({
+    "Företag": company.name || "",
+    "Förare": company.driver || "",
     "Datum": t.date,
     "Från": t.from,
     "Till": t.to,
@@ -310,7 +312,6 @@ $("exportBtn").addEventListener("click", function() {
     "Körda km": t.km,
     "Typ av resa": t.type
   }));
-
   const worksheet = XLSX.utils.json_to_sheet(rows);
   const workbook = XLSX.utils.book_new();
 
